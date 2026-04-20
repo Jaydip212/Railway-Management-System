@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RailJet Pro | Premium Railway Management System</title>
+    <meta name="description" content="Book your journeys with RailJet Pro - the most advanced and premium railway management experience. Fast, secure, and intuitive.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="mainSidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-train-subway"></i>
+                    <span>Rail<span>Jet</span> Pro</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active" data-page="dashboard" id="navDashboard">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li data-page="search" id="navSearch">
+                        <i class="fas fa-search"></i>
+                        <span>Search Trains</span>
+                    </li>
+                    <li data-page="bookings" id="navBookings">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>My Bookings</span>
+                    </li>
+                    <li data-page="pnr-status" id="navPnr">
+                        <i class="fas fa-info-circle"></i>
+                        <span>PNR Status</span>
+                    </li>
+                </ul>
+                
+                <div class="nav-divider"></div>
+                
+                <ul>
+                    <li data-page="admin" id="navAdmin">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Admin Portal</span>
+                    </li>
+                    <li data-page="settings" id="navSettings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-card" id="userProfileBtn">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="User" class="avatar">
+                    <div class="user-info">
+                        <span class="name">Admin User</span>
+                        <span class="role">Railway Authority</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="page-info">
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <p id="pageSubtitle">Welcome back to your control center.</p>
+                </div>
+                
+                <div class="top-bar-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search PNR or Train...">
+                    </div>
+                    <button class="icon-btn" title="Notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge"></span>
+                    </button>
+                    <button class="primary-btn" id="quickBookBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>New Booking</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dynamic Page Content -->
+            <section id="contentView" class="view-content">
+                <!-- Content will be injected here by app.js -->
+                <div class="loader-container">
+                    <div class="loader"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="modalContainer" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

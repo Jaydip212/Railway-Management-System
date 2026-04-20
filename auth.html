@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication | RailJet Pro</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <!-- Left Side Image -->
+        <div class="auth-banner">
+            <div class="banner-overlay"></div>
+            <div class="banner-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-train-subway"></i>
+                    <span>Rail<span>Jet</span> Pro</span>
+                </a>
+                <div class="banner-text">
+                    <h2>Your journey begins here.</h2>
+                    <p>Enter the most advanced railway management system designed for speed, security, and simplicity.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side Form -->
+        <div class="auth-container">
+            <div class="auth-box">
+                
+                <div class="tabs">
+                    <button class="tab-btn active" id="loginBtn">Login</button>
+                    <button class="tab-btn" id="signupBtn">Sign Up</button>
+                </div>
+
+                <div class="form-container active" id="loginForm">
+                    <h3>Welcome Back</h3>
+                    <p class="subtitle">Enter your credentials to access your dashboard.</p>
+                    <form action="dashboard.html" method="GET">
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <div class="input-field">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" placeholder="admin@railjet.com" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Password</label>
+                            <div class="input-field">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="••••••••" required>
+                            </div>
+                            <a href="#" class="forgot-pass">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="primary-btn">Log In <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+
+                <div class="form-container" id="signupForm" style="display: none;">
+                    <h3>Create Account</h3>
+                    <p class="subtitle">Join RailJet Pro for the best travel management.</p>
+                    <form action="dashboard.html" method="GET">
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <div class="input-field">
+                                <i class="fas fa-user"></i>
+                                <input type="text" placeholder="John Doe" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <div class="input-field">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Password</label>
+                            <div class="input-field">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" placeholder="Create a strong password" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="primary-btn">Create Account <i class="fas fa-user-plus"></i></button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Toggle logic -->
+    <script>
+        const loginBtn = document.getElementById('loginBtn');
+        const signupBtn = document.getElementById('signupBtn');
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+
+        loginBtn.addEventListener('click', () => {
+            loginBtn.classList.add('active');
+            signupBtn.classList.remove('active');
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+        });
+
+        signupBtn.addEventListener('click', () => {
+            signupBtn.classList.add('active');
+            loginBtn.classList.remove('active');
+            signupForm.style.display = 'block';
+            loginForm.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
